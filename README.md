@@ -6,7 +6,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/macOS-Sequoia%2015.8.3-blue?logo=apple" />
-  <img src="https://img.shields.io/badge/OpenCore-x.x.x-green" />
+  <img src="https://img.shields.io/badge/OpenCore-0.8.8-green" />
   <img src="https://img.shields.io/badge/status-WIP-orange" />
 </p>
 
