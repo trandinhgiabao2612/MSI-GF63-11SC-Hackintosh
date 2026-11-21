@@ -1,11 +1,11 @@
 <h1 align="center">MSI GF63 11SC Hackintosh</h1>
 
 <p align="center">
-  OpenCore EFI for the MSI GF63 Thin 11SC running macOS Tahoe
+  OpenCore EFI for the MSI GF63 Thin 11SC running macOS Sequoia
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/macOS-Tahoe%2026.x-blue?logo=apple" />
+  <img src="https://img.shields.io/badge/macOS-Sequoia%2015.8.3-blue?logo=apple" />
   <img src="https://img.shields.io/badge/OpenCore-x.x.x-green" />
   <img src="https://img.shields.io/badge/status-WIP-orange" />
 </p>
@@ -21,6 +21,30 @@
 > It is currently waiting for the [WhateverXe](https://github.com/b00t0x/WhateverXe) developer to fix a bug affecting H45 (Tiger Lake-H) CPUs.
 > The laptop *can* be used as a daily driver, but it is **not recommended** until the bug is fixed.
 
+## 📑 Table of Contents
+
+- [Supported macOS](#-supported-macos)
+- [Specifications](#-specifications)
+- [Status](#-status)
+- [BIOS Settings](#️-bios-settings)
+- [Installation](#-installation)
+- [How to Fix](#-how-to-fix)
+- [Kexts & SSDTs](#-kexts--ssdts)
+- [Known Issues](#-known-issues)
+- [Disclaimer](#-disclaimer)
+- [Credits](#-credits)
+
+## 💻 Supported macOS
+
+| Version | Status |
+|---|---|
+| macOS Sequoia 15.8.3 | ⚠️ Tested (WIP) |
+| macOS Tahoe 26.x | ❓ Not tested |
+
+> [!NOTE]
+> This EFI is only tested on **macOS 15.8.3**. macOS 26.x has not been tested yet.
+> If it gets tested, a separate EFI for it will be uploaded.
+
 ## 📋 Specifications
 
 | Component | Details |
@@ -32,6 +56,9 @@
 | RAM | 16 GB |
 | Wi-Fi / Bluetooth | Intel AX201 |
 | Storage | Kingston OM8PDP3512B-AI1 (512 GB, PCIe Gen 3 x4 NVMe) |
+
+> [!NOTE]
+> This EFI is only tested on the hardware above. Different RAM, Wi-Fi cards, SSDs or BIOS versions may behave differently.
 
 ## ✅ Status
 
@@ -48,7 +75,7 @@
 | Sleep / Wake | | |
 | NVIDIA GTX 1650 | | |
 
-> Fill in the blanks after testing: ✅ works, ⚠️ partially works, ❌ not working.
+> ✅ works, ⚠️ partially works, ❌ not working.
 
 ## ⚙️ BIOS Settings
 
@@ -62,34 +89,55 @@ Right Ctrl + Right Shift + Left Alt + F2
 <details>
 <summary>Disable CFG Lock</summary>
 
-<!-- Steps go here -->
+**WIP**
 
 </details>
 
 <details>
 <summary>Set DVMT Pre-Allocated to 96M</summary>
 
-<!-- Steps go here -->
+**WIP**
 
 </details>
 
 <details>
 <summary>Other BIOS options</summary>
 
-<!-- Steps go here -->
+**WIP**
 
 </details>
 
 ## 🚀 Installation
 
+This is a prebuilt EFI, free to use, for anyone who doesn't want to build their own.
+
 1. Download the EFI from the **Releases** page (or **Code → Download ZIP**).
-2. Create a macOS installer USB by following the [Dortania OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/).
+2. Create a macOS installer USB by following the [Dortania OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/). Download macOS directly from Apple.
 3. Copy the `EFI` folder to the EFI partition of the USB drive.
-4. Generate **your own SMBIOS** (Serial, MLB, SmUUID) with GenSMBIOS. Do not reuse anyone else's.
-5. Apply the BIOS settings above, boot from the USB and install macOS.
+4. Generate **your own SMBIOS** (Serial, MLB, SmUUID, ROM) with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) and put it in `config.plist`. The values in this repo are placeholders. Do not reuse anyone else's.
+5. Apply the [BIOS settings](#️-bios-settings) above, boot from the USB and install macOS.
+6. After installing, follow [Booting Without USB](booting-without-usb.md) to copy the EFI to your internal drive. Otherwise you will still need the USB to boot.
 
 > [!IMPORTANT]
-> Back up your data before installing. Use this EFI at your own risk.
+> Back up your data before installing.
+
+## 🛠️ How to Fix
+
+### The laptop only boots with the USB / the BIOS doesn't show OpenCore
+
+After installing macOS, the EFI is usually not copied to the internal drive, so the BIOS has nothing to boot.
+
+👉 Follow the guide: **[Booting Without USB](booting-without-usb.md)**
+
+It covers how to:
+
+- copy the `EFI` folder to the internal drive's EFI partition
+- add a boot entry using the UEFI Shell (OpenShell)
+- set the new entry as the first boot option in the BIOS
+
+### Other problems
+
+**WIP**
 
 ## 📦 Kexts & SSDTs
 
@@ -114,10 +162,19 @@ Right Ctrl + Right Shift + Left Alt + F2
 ## 🐛 Known Issues
 
 - Waiting on the WhateverXe fix for H45 CPUs
+- macOS 26.x is untested with this EFI
 - ...
+
+## 📜 Disclaimer
+
+- This EFI is provided **as-is, without any warranty**. Use it at your own risk.
+- It is free and not affiliated with Apple, MSI, or any of the projects listed in the credits.
+- Apple's macOS installer is **not** included. Download it from Apple.
+- Every kext and tool keeps its own license. See the linked repositories for details.
 
 ## 🙏 Credits
 
+- [OpCore Simplify](https://github.com/lzhoang2801/OpCore-Simplify) by lzhoang2801, used to generate the base EFI, then tweaked by hand
 - [Acidanthera](https://github.com/acidanthera) for OpenCore and the kexts
 - [b00t0x](https://github.com/b00t0x/WhateverXe) for WhateverXe
 - [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for the install guide
