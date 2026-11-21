@@ -1,13 +1,12 @@
 <h1 align="center">MSI GF63 11SC Hackintosh</h1>
 
 <p align="center">
-  OpenCore EFI for the MSI GF63 Thin 11SC running macOS Sequoia and Tahoe
+  OpenCore EFI for the MSI GF63 Thin 11SC running macOS Sequoia
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/macOS-Sequoia%2015.8.3-blue?logo=apple" />
-  <img src="https://img.shields.io/badge/macOS-Tahoe%2026.x.x-blue?logo=apple" />
-  <img src="https://img.shields.io/badge/OpenCore-0.8.8-green" />
+  <img src="https://img.shields.io/badge/OpenCore-1.0.8-green" />
   <img src="https://img.shields.io/badge/status-WIP-orange" />
 </p>
 
