@@ -88,24 +88,58 @@ To unlock the hidden advanced menu, press this combination while in the BIOS set
 Right Ctrl + Right Shift + Left Alt + F2
 ```
 
-<details>
-<summary>Disable CFG Lock</summary>
+| Setting | Value | Path |
+|---|---|---|
+| Secure Boot | Disabled | `Security` → `Secure Boot Support` |
+| CFG Lock | Disabled | `Advanced` → `Power & Performance` → `CPU - Power Management Control` → `CPU Lock Configuration` → `CFG Lock` |
+| DVMT Pre-Allocated | 96M | `Advanced` → `System Agent (SA) Configuration` → `Graphics Configuration` → `DVMT Pre-Allocated` |
+| Fast Boot | Disabled | `Boot` → `Fast Boot` |
+| VT-d | Enabled | `Advanced` → `VT-d` or `Advanced` → `System Agent (SA) Configuration` → `VT-d` |
 
-**WIP**
+<details>
+<summary>Secure Boot (Disabled)</summary>
+
+1. Go to `Security` → `Secure Boot Support`.
+2. Set it to **Disabled**.
 
 </details>
 
 <details>
-<summary>Set DVMT Pre-Allocated to 96M</summary>
+<summary>CFG Lock (Disabled)</summary>
 
-**WIP**
+> [!IMPORTANT]
+> Requires the hidden advanced menu. Unlock it first with `Right Ctrl + Right Shift + Left Alt + F2`.
+
+1. Go to `Advanced` → `Power & Performance` → `CPU - Power Management Control`.
+2. Open `CPU Lock Configuration` (it is the last item in the list).
+3. Set `CFG Lock` to **Disabled**.
 
 </details>
 
 <details>
-<summary>Other BIOS options</summary>
+<summary>DVMT Pre-Allocated (96M)</summary>
 
-**WIP**
+> [!NOTE]
+> This option is hidden by default. Unlock the hidden advanced menu first.
+
+1. Go to `Advanced` → `System Agent (SA) Configuration` → `Graphics Configuration`.
+2. Set `DVMT Pre-Allocated` to **96M** (64M also works, but 96M is recommended).
+
+</details>
+
+<details>
+<summary>Fast Boot (Disabled)</summary>
+
+1. Go to `Boot` → `Fast Boot`.
+2. Set it to **Disabled**.
+
+</details>
+
+<details>
+<summary>VT-d (Enabled)</summary>
+
+1. Go to `Advanced` → `VT-d` and set it to **Enabled**.
+2. If you can't find it there, go to `Advanced` → `System Agent (SA) Configuration` → `VT-d` and set it to **Enabled**.
 
 </details>
 
