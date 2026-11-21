@@ -20,6 +20,8 @@
 > **This project is a work in progress.**
 > It is currently waiting for the [WhateverXe](https://github.com/b00t0x/WhateverXe) developer to fix a bug affecting H45 (Tiger Lake-H) CPUs.
 > The laptop *can* be used as a daily driver, but it is **not recommended** until the bug is fixed.
+> **Do NOT install `WhateverXe.pkg` after installing macOS.**
+> This EFI uses **WhateverXe 0.8.3**, which is the version with the H45 bug. Installing the package can leave the laptop **unable to boot into macOS**.
 
 ## 📑 Table of Contents
 
@@ -163,6 +165,7 @@ It covers how to:
 
 - Waiting on the WhateverXe fix for H45 CPUs
 - macOS 26.x is untested with this EFI
+- Installing `WhateverXe.pkg` can break booting
 - ...
 
 ## 📜 Disclaimer
