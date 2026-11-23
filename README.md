@@ -23,6 +23,9 @@
 > **Do NOT install `WhateverXe.pkg` after installing macOS.**
 > This EFI uses **WhateverXe 0.8.3**, which is the version with the H45 bug. Installing the package can leave the laptop **unable to boot into macOS**.
 
+> [!NOTE]
+> **About updates:** this project is developed entirely in my spare time. When a new version of WhateverXe is released, I may not be able to update this EFI right away, since I mostly use my phone. Updates may take longer than expected.
+
 ## 📑 Table of Contents
 
 - [Supported macOS](#-supported-macos)
@@ -187,18 +190,55 @@ It covers how to:
 <details>
 <summary>Kext list</summary>
 
-- Lilu
-- VirtualSMC
-- WhateverXe
-- AppleALC
-- ...
+**Core**
+- Lilu 1.7.2
+- VirtualSMC 1.3.0 (with SMCProcessor, SMCSuperIO, SMCBatteryManager, SMCLightSensor)
+- WhateverXe 0.8.4
+- AMFIAnchor 0.1.2
+- AMFIAnchorInjector 1.0.0
+- RestrictEvents 1.1.7
+- ECEnabler 1.0.6
+- NVMeFix 1.1.4
+
+**Audio**
+- AppleALC 1.7.7
+
+**Wi-Fi & Bluetooth**
+- AirportItlwm 2.4.0 (macOS 15 / Sequoia only)
+- IntelBluetoothFirmware 2.5.0
+- IntelBTPatcher 2.5.0
+- BlueToolFixup 2.7.3
+
+**Input**
+- VoodooPS2Controller 2.3.8 (Keyboard, Mouse, Trackpad)
+- VoodooI2C 2.9.1 (with VoodooI2CServices, VoodooGPIO, VoodooInput 1.1.7)
+- VoodooI2CHID
+- BrightnessKeys 1.0.4
+
+**USB**
+- USBToolBox 1.2.0
+- UTBMap
+- XHCI-unsupported 0.9.2
+
+**Network**
+- RealtekRTL8111 2.4.2
 
 </details>
 
 <details>
 <summary>SSDT list</summary>
 
-- ...
+- SSDT-PLUG (CPU power management)
+- SSDT-PNLF (backlight)
+- SSDT-Disable_GPU_PEG1 (disables the NVIDIA GPU)
+- SSDT-GPI0 (GPIO, for the I2C touchpad)
+- SSDT-XOSI (Windows OS interface, for the I2C touchpad)
+- SSDT-ALS0 (ambient light sensor)
+- SSDT-SBUS (SMBus)
+- SSDT-MCHC (memory controller)
+- SSDT-RTCAWAC (RTC fix)
+- SSDT-USBX (USB power)
+- SSDT-USB-Reset (USB port reset)
 
 </details>
 
