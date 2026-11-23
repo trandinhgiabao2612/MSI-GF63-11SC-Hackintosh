@@ -68,14 +68,14 @@
 |---|---|---|
 | Boot macOS | ⚠️ | Depends on the WhateverXe H45 fix |
 | Intel UHD graphics | ⚠️ | Handled by WhateverXe, WIP |
-| Wi-Fi | | |
-| Bluetooth | | |
-| Audio | | |
-| Touchpad | | |
-| Keyboard / Fn keys | | |
-| Webcam | | |
-| Sleep / Wake | | |
-| NVIDIA GTX 1650 | | |
+| Wi-Fi | ✅ | |
+| Bluetooth | ⚠️ | Untested |
+| Audio | ❌ | Fixing... |
+| Touchpad | ✅ | Works, gestures work too (but you need a careful touch for them to register) |
+| Keyboard / Fn keys | ✅ | Works unless Fn keys |
+| Webcam | ❌ | Detected and the indicator light turns on, but no image is shown |
+| Sleep / Wake | ❌ | Untested |
+| NVIDIA GTX 1650 | ❌ | Untested/Unknown |
 
 > ✅ works, ⚠️ partially works, ❌ not working.
 
