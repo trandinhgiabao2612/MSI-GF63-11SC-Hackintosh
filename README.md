@@ -68,7 +68,7 @@
 |---|---|---|
 | Boot macOS | ⚠️ | Depends on the WhateverXe H45 fix |
 | Intel UHD graphics | ⚠️ | Handled by WhateverXe, WIP |
-| Wi-Fi | ✅ | |
+| Wi-Fi | ✅ | Working great |
 | Bluetooth | ⚠️ | Untested |
 | Audio | ❌ | Fixing... |
 | Touchpad | ✅ | Works, gestures work too (but you need a careful touch for them to register) |
