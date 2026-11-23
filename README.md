@@ -30,7 +30,7 @@
 - [Status](#-status)
 - [BIOS Settings](#️-bios-settings)
 - [Installation](#-installation)
-- [How to Fix](#-how-to-fix)
+- [How to Fix](#%EF%B8%8F-how-to-fix)
 - [Kexts & SSDTs](#-kexts--ssdts)
 - [Known Issues](#-known-issues)
 - [Disclaimer](#-disclaimer)
@@ -51,16 +51,20 @@
 
 | Component | Details |
 |---|---|
-| Laptop | MSI GF63 Thin 11SC |
-| CPU | Intel Core i5-11400H (Tiger Lake-H45) |
-| iGPU | Intel UHD Graphics (Xe) |
-| dGPU | NVIDIA GeForce GTX 1650 |
-| RAM | 16 GB |
-| Wi-Fi / Bluetooth | Intel AX201 |
+| Laptop | MSI GF63 Thin 11SC (664VN) |
+| CPU | Intel Core i5-11400H @ 2.70 GHz (6 cores / 12 threads) |
+| iGPU | Intel UHD Graphics, Tiger Lake-H45 (8086:9A60) |
+| dGPU | NVIDIA GeForce GTX 1650 Max-Q |
+| RAM | 16 GB (2x8 GB) DDR4 3200 MHz |
+| Wi-Fi / Bluetooth | Intel AX201 (Wi-Fi 6 / Bluetooth 5.2, 160 MHz) |
 | Storage | Kingston OM8PDP3512B-AI1 (512 GB, PCIe Gen 3 x4 NVMe) |
+| Storage (secondary) | Kingston SA400S37120G (120 GB, SATA 3) |
+| Install layout | macOS on a 120 GB partition of the NVMe drive, dual boot with Windows (shared 100 MB EFI partition) |
 
 > [!NOTE]
 > This EFI is only tested on the hardware above. Different RAM, Wi-Fi cards, SSDs or BIOS versions may behave differently.
+>
+> The macOS partition shows up as "Primary Partition" in Windows Disk Management because Windows can't read APFS. Do not format it.
 
 ## ✅ Status
 
@@ -68,16 +72,16 @@
 |---|---|---|
 | Boot macOS | ⚠️ | Depends on the WhateverXe H45 fix |
 | Intel UHD graphics | ⚠️ | Handled by WhateverXe, WIP |
-| Wi-Fi | ✅ | Working great |
-| Bluetooth | ⚠️ | Untested |
-| Audio | ❌ | Fixing... |
-| Touchpad | ✅ | Works, gestures work too (but you need a careful touch for them to register) |
-| Keyboard / Fn keys | ✅ | Works unless Fn keys |
+| Wi-Fi | ✅ | Works great |
+| Bluetooth | ❓ | Not tested |
+| Audio | ❌ | Not working yet, still working on it |
+| Touchpad | ✅ | Gestures work too, but you need a careful touch for them to register |
+| Keyboard / Fn keys | ⚠️ | Keyboard works, Fn keys don't |
 | Webcam | ❌ | Detected and the indicator light turns on, but no image is shown |
-| Sleep / Wake | ❌ | Untested |
-| NVIDIA GTX 1650 | ❌ | Untested/Unknown |
+| Sleep / Wake | ❓ | Not tested |
+| NVIDIA GTX 1650 | ❌ | Not supported by macOS |
 
-> ✅ works, ⚠️ partially works, ❌ not working.
+> ✅ works, ⚠️ partially works, ❌ not working, ❓ not tested.
 
 ## ⚙️ BIOS Settings
 
@@ -147,10 +151,13 @@ Right Ctrl + Right Shift + Left Alt + F2
 
 This is a prebuilt EFI, free to use, for anyone who doesn't want to build their own.
 
-1. Download the EFI from the **Releases** page (or **Code → Download ZIP**).
+1. Download the EFI from the **Releases** page.
 2. Create a macOS installer USB by following the [Dortania OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/). Download macOS directly from Apple.
 3. Copy the `EFI` folder to the EFI partition of the USB drive.
-4. Generate **your own SMBIOS** (Serial, MLB, SmUUID, ROM) with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) and put it in `config.plist`. The values in this repo are placeholders. Do not reuse anyone else's.
+4. **Set up your own SMBIOS.** All `PlatformInfo` / SMBIOS values in this EFI (Serial, MLB, SmUUID, ROM) are **zeros (placeholders)**. Do not boot with them as they are:
+   1. Generate your own values with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
+   2. Check the generated serial (make sure it is not already in use).
+   3. Put the values in `config.plist` under `PlatformInfo` → `Generic`.
 5. Apply the [BIOS settings](#️-bios-settings) above, boot from the USB and install macOS.
 6. After installing, follow [Booting Without USB](booting-without-usb.md) to copy the EFI to your internal drive. Otherwise you will still need the USB to boot.
 
