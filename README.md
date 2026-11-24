@@ -18,8 +18,9 @@
 
 > [!WARNING]
 > **This project is a work in progress.**
-> It is currently waiting for the [WhateverXe](https://github.com/b00t0x/WhateverXe) developer to fix a bug affecting H45 (Tiger Lake-H) CPUs.
-> The laptop *can* be used as a daily driver, but it is **not recommended** until the bug is fixed.
+> Graphics now work, but sleep/wake, microphone and webcam do not, and the system may occasionally freeze.
+> This EFI uses my own [WhateverXe fork](https://github.com/trandinhgiabao2612/WhateverXe-9A60) that fixes the 9A60 (H45 / Tiger Lake-H) iGPU. Original project: [b00t0x/WhateverXe](https://github.com/b00t0x/WhateverXe).
+> It *can* be used as a daily driver, but it is **not recommended**.
 
 > [!NOTE]
 > **About updates:** this project is developed entirely in my spare time. When a new version of WhateverXe is released, I may not be able to update this EFI right away, since I mostly use my phone. Updates may take longer than expected.
