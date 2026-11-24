@@ -171,7 +171,8 @@ This is a prebuilt EFI, free to use, for anyone who doesn't want to build their 
    2. Check the generated serial (make sure it is not already in use).
    3. Put the values in `config.plist` under `PlatformInfo` → `Generic`.
 5. Apply the [BIOS settings](#️-bios-settings) above, boot from the USB and install macOS.
-6. After installing, follow [Booting Without USB](booting-without-usb.md) to copy the EFI to your internal drive. Otherwise you will still need the USB to boot.
+6. After installing macOS, install the **WhateverXe Graphics** package to get graphics acceleration.
+7. Then follow [Booting Without USB](booting-without-usb.md) to copy the EFI to your internal drive. Otherwise you will still need the USB to boot.
 
 > [!IMPORTANT]
 > Back up your data before installing.
@@ -248,15 +249,17 @@ It covers how to:
 - SSDT-RTCAWAC (RTC fix)
 - SSDT-USBX (USB power)
 - SSDT-USB-Reset (USB port reset)
+- SSDT-BATT (Battery Percent)
 
 </details>
 
 ## 🐛 Known Issues
 
-- Waiting on the WhateverXe fix for H45 CPUs
+- Internal Speakers have no sound (try one of the 3 Line Out outputs)
+- Microphone and webcam do not work
+- The system may occasionally freeze or hang during use
+- Sleep / Wake does not work yet
 - macOS 26.x is untested with this EFI
-- Installing `WhateverXe.pkg` can break booting
-- ...
 
 ## 📜 Disclaimer
 
