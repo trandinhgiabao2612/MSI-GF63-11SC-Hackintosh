@@ -20,8 +20,6 @@
 > **This project is a work in progress.**
 > It is currently waiting for the [WhateverXe](https://github.com/b00t0x/WhateverXe) developer to fix a bug affecting H45 (Tiger Lake-H) CPUs.
 > The laptop *can* be used as a daily driver, but it is **not recommended** until the bug is fixed.
-> **Do NOT install `WhateverXe.pkg` after installing macOS.**
-> This EFI uses **WhateverXe 0.8.3**, which is the version with the H45 bug. Installing the package can leave the laptop **unable to boot into macOS**.
 
 > [!NOTE]
 > **About updates:** this project is developed entirely in my spare time. When a new version of WhateverXe is released, I may not be able to update this EFI right away, since I mostly use my phone. Updates may take longer than expected.
@@ -73,15 +71,16 @@
 
 | Feature | Status | Notes |
 |---|---|---|
-| Boot macOS | ⚠️ | Depends on the WhateverXe H45 fix |
-| Intel UHD graphics | ⚠️ | Handled by WhateverXe, WIP |
+| Boot macOS | ✅ | Occasional freezes during use |
+| Intel UHD graphics | ✅ | 1536 MB, using the WhateverXe 9A60 fork |
 | Wi-Fi | ✅ | Works great |
-| Bluetooth | ❓ | Not tested |
-| Audio | ❌ | Not working yet, still working on it |
+| Bluetooth | ✅ | Works great with headphone, accessories |
+| Audio | ⚠️ | Internal Speakers have no sound. Try one of the 3 Line Out outputs (the last one may work) |
+| Microphone | ❌ | Unsupported or no kext available |
 | Touchpad | ✅ | Gestures work too, but you need a careful touch for them to register |
-| Keyboard / Fn keys | ⚠️ | Keyboard works, Fn keys don't |
-| Webcam | ❌ | Detected and the indicator light turns on, but no image is shown |
-| Sleep / Wake | ❓ | Not tested |
+| Keyboard / Fn keys | ✅ | Keyboard and Fn keys work |
+| Webcam | ❌ | Unsupported or no kext available |
+| Sleep / Wake | ❌ | Not working yet |
 | NVIDIA GTX 1650 | ❌ | Not supported by macOS |
 
 > ✅ works, ⚠️ partially works, ❌ not working, ❓ not tested.
