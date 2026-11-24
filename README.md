@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  
+  <img src="screenshots/about-this-mac.png" width="300" />
 </p>
 
 ---
