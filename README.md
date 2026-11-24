@@ -86,6 +86,15 @@
 
 > ✅ works, ⚠️ partially works, ❌ not working, ❓ not tested.
 
+<details>
+<summary>📸 Screenshots</summary>
+
+<p align="center">
+  <img src="screenshots/system-settings.png" width="700" />
+</p>
+
+</details>
+
 ## ⚙️ BIOS Settings
 
 Some required options (such as **CFG Lock** and **DVMT Pre-Allocated**) are hidden by default on MSI laptops.
