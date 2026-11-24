@@ -1,17 +1,22 @@
 <h1 align="center">MSI GF63 11SC Hackintosh</h1>
 
 <p align="center">
-  OpenCore EFI for the MSI GF63 Thin 11SC running macOS Sequoia
+  OpenCore EFI for the MSI GF63 Thin 11SC running macOS Sequoia and Tahoe
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/macOS-Sequoia%2015.8.3-blue?logo=apple" />
+  <img src="https://img.shields.io/badge/macOS-Sequoia%2015.8.3%20%7C%20Tahoe%2026.7.3-blue?logo=apple" />
   <img src="https://img.shields.io/badge/OpenCore-1.0.8-green" />
   <img src="https://img.shields.io/badge/status-WIP-orange" />
 </p>
 
 <p align="center">
-  <img src="screenshots/about-this-mac.png" width="300" />
+  <img src="screenshots/about-this-mac.png" width="250" />
+  <img src="screenshots/about-this-mac-tahoe.png" width="250" />
+</p>
+
+<p align="center">
+  <sub>macOS Sequoia 15.8.3 (left) · macOS Tahoe 26.7.3 (right)</sub>
 </p>
 
 ---
@@ -40,14 +45,14 @@
 
 ## 💻 Supported macOS
 
-| Version | Status |
-|---|---|
-| macOS Sequoia 15.8.3 | ⚠️ Tested (WIP) |
-| macOS Tahoe 26.x | ❓ Not tested |
+| Version | Status | Notes |
+|---|---|---|
+| macOS Sequoia 15.8.3 | ✅ Tested | |
+| macOS Tahoe 26.7.3 | ✅ Tested | Liquid Glass and graphics work |
 
 > [!NOTE]
-> This EFI is only tested on **macOS 15.8.3**. macOS 26.x has not been tested yet.
-> If it gets tested, a separate EFI for it will be uploaded.
+> Each macOS version has its own EFI. Download the one that matches your macOS version from the **Releases** page.
+> Both versions have the same functionality and the same known issues.
 
 ## 📋 Specifications
 
@@ -89,8 +94,20 @@
 <details>
 <summary>📸 Screenshots</summary>
 
+**macOS Sequoia 15.8.3**
+
 <p align="center">
   <img src="screenshots/system-settings.png" width="700" />
+</p>
+
+**macOS Tahoe 26.7.3**
+
+<p align="center">
+  <img src="screenshots/system-settings-tahoe.png" width="700" />
+</p>
+
+<p align="center">
+  <img src="screenshots/desktop-tahoe.png" width="700" />
 </p>
 
 </details>
@@ -163,7 +180,7 @@ Right Ctrl + Right Shift + Left Alt + F2
 
 This is a prebuilt EFI, free to use, for anyone who doesn't want to build their own.
 
-1. Download the EFI from the **Releases** page.
+1. Download the EFI for your macOS version from the **Releases** page.
 2. Create a macOS installer USB by following the [Dortania OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/). Download macOS directly from Apple.
 3. Copy the `EFI` folder to the EFI partition of the USB drive.
 4. **Set up your own SMBIOS.** All `PlatformInfo` / SMBIOS values in this EFI (Serial, MLB, SmUUID, ROM) are **zeros (placeholders)**. Do not boot with them as they are:
@@ -236,6 +253,14 @@ It covers how to:
 </details>
 
 <details>
+<summary>Extra kexts for macOS Tahoe</summary>
+
+- SimpleHDA
+- itlwm (by laobamac)
+
+</details>
+
+<details>
 <summary>SSDT list</summary>
 
 - SSDT-PLUG (CPU power management)
@@ -259,7 +284,6 @@ It covers how to:
 - Microphone and webcam do not work
 - The system may occasionally freeze or hang during use
 - Sleep / Wake does not work yet
-- macOS 26.x is untested with this EFI
 
 ## 📜 Disclaimer
 
@@ -274,7 +298,7 @@ It covers how to:
 - [Acidanthera](https://github.com/acidanthera) for OpenCore and the kexts
 - [b00t0x](https://github.com/b00t0x/WhateverXe) for WhateverXe
 - [Dortania](https://dortania.github.io/OpenCore-Install-Guide/) for the install guide
-- ...
+- [laobamac](https://github.com/laobamac) for itlwm (macOS Tahoe support)
 
 ## 📄 License
 
